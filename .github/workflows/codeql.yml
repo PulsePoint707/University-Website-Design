@@ -1,0 +1,57 @@
+This is a GitHub Actions workflow file, written in YAML. It's used to automate code scanning and analysis using CodeQL.
+
+I'll provide an updated version of the workflow file with some improvements:
+
+
+name: CodeQL Advanced
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  schedule:
+    - cron: '45 3 * * 0'
+
+jobs:
+  analyze:
+    name: Analyze (${{ matrix.language }})
+    runs-on: ${{ (matrix.language == 'swift' && 'macos-latest') || 'ubuntu-latest' }}
+    permissions:
+      security-events: write
+      packages: read
+      actions: read
+      contents: read
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - language: c-cpp
+            build-mode: compile
+          - language: java-kotlin
+            build-mode: compile
+          - language: javascript-typescript
+            build-mode: auto
+          - language: python
+            build-mode: auto
+          - language: ruby
+            build-mode: auto
+          - language: swift
+            build-mode: compile
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          languages: ${{ matrix.language }}
+          build-mode: ${{ matrix.build-mode }}
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v3
+        with:
+          category: "/language:${{matrix.language}}"
