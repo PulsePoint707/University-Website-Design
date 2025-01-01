@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Hometown Agency</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body class="home-page">
+    <header>
+        <div class="header-content">
+            <img src="The Howmtown Agency logo.png"alt="The Hometown Agency" class="logo">
+            <div class="auth-links">
+                <a href="login.html" id="login-link">Login</a>
+                <a href="register.html" id="register-link">Register</a>
+                <a href="admin-login.html" id="admin-login-link">Admin Login</a> <!-- Admin login link -->
+                <a href="admin.html" id="admin-link" style="display: none;">Admin</a> <!-- Admin page link -->
+                <a href="#" id="logout-link" style="display: none;" onclick="logout()">Logout</a>
+                <div class="language-dropdown">
+                    <button class="dropbtn">Language</button>
+                    <div class="dropdown-content">
+                        <a href="#" onclick="changeLanguage('en')">English</a>
+                        <a href="#" onclick="changeLanguage('es')">Español</a>
+                        <a href="#" onclick="changeLanguage('fr')">Français</a>
+                        <a href="#" onclick="changeLanguage('de')">Deutsch</a>
+                        <!-- Add more languages as needed -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="hero">
+            <h2 id="welcome-text">Welcome to The Hometown Agency</h2>
+            <p id="tagline">Your trusted partner in real estate.</p>
+        </section>
+        <section class="search-bar">
+            <input type="text" class="search-input" placeholder="Search for properties..." id="search-input">
+            <button class="search-button" onclick="searchProperties()">Search</button>
+        </section>
+        <section class="listings" id="listings">
+            <div class="listing" data-property-id="1">
+                <img src="Apartment1.png" alt="Apartment 1">
+                <h3>Luxury Apartment 1</h3>
+                <p>Location: Downtown</p>
+                <p>Price: 2.3M AED</p>
+                <button>Contact</button>
+            </div>
+            <div class="listing" data-property-id="2">
+                <img src="Apartment2.png" alt="Apartment 2">
+                <h3>Cozy Apartment 2</h3>
+                <p>Location: Uptown</p>
+                <p>Price: 1.8M AED</p>
+                <button>Contact</button>
+            </div>
+            <div class="listing" data-property-id="3">
+                <img src="Apartment3.png" alt="Apartment 3">
+                <h3>Modern Apartment 3</h3>
+                <p>Location: Suburbs</p>
+                <p>Price: 1.5M AED</p>
+                <button>Contact</button>
+            </div>
+        </section>
+    </main>
+    <script>
+        function changeLanguage(language) {
+            const elements = {
+                "en": {
+                    "welcome-text": "Welcome to The Hometown Agency",
+                    "tagline": "Your trusted partner in real estate."
+                },
+                "es": {
+                    "welcome-text": "Bienvenido a The Hometown Agency",
+                    "tagline": "Su socio de confianza en bienes raíces."
+                },
+                "fr": {
+                    "welcome-text": "Bienvenue à The Hometown Agency",
+                    "tagline": "Votre partenaire de confiance en immobilier."
+                },
+                "de": {
+                    "welcome-text": "Willkommen bei The Hometown Agency",
+                    "tagline": "Ihr vertrauenswürdiger Partner in Immobilien."
+                }
+            };
+
+            document.getElementById('welcome-text').textContent = elements[language]["welcome-text"];
+            document.getElementById('tagline').textContent = elements[language]["tagline"];
+        }
+
+        function checkLoginStatus() {
+            const loggedIn = false; // Replace with your actual login status check
+            const isAdmin = false; // Replace with your actual admin status check
+
+            if (loggedIn) {
+                document.body.classList.add('logged-in');
+                document.getElementById('logout-link').style.display = 'block'; // Show logout link if logged in
+                document.getElementById('login-link').style.display = 'none'; // Hide login link if logged in
+                document.getElementById('register-link').style.display = 'none'; // Hide register link if logged in
+
+                if (isAdmin) {
+                    document.getElementById('admin-link').style.display = 'block'; // Show admin link if admin
+                }
+            }
+        }
+
+        function logout() {
+            document.body.classList.remove('logged-in');
+            document.getElementById('logout-link').style.display = 'none'; // Hide logout link after logout
+            document.getElementById('login-link').style.display = 'block'; // Show login link after logout
+            document.getElementById('register-link').style.display = 'block'; // Show register link after logout
+            document.getElementById('admin-link').style.display = 'none'; // Hide admin link after logout
+            alert('You have logged out successfully');
+        }
+
+        document.addEventListener('DOMContentLoaded', checkLoginStatus);
+    </script>
+</body>
+</html>
