@@ -1,119 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Hometown Agency</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
+    <title>University Website Design - Easy Toturial</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Miniver&family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="home-page">
-    <header>
-        <div class="header-content">
-            <img src="The Howmtown Agency logo.png"alt="The Hometown Agency" class="logo">
-            <div class="auth-links">
-                <a href="login.html" id="login-link">Login</a>
-                <a href="register.html" id="register-link">Register</a>
-                <a href="admin-login.html" id="admin-login-link">Admin Login</a> <!-- Admin login link -->
-                <a href="admin.html" id="admin-link" style="display: none;">Admin</a> <!-- Admin page link -->
-                <a href="#" id="logout-link" style="display: none;" onclick="logout()">Logout</a>
-                <div class="language-dropdown">
-                    <button class="dropbtn">Language</button>
-                    <div class="dropdown-content">
-                        <a href="#" onclick="changeLanguage('en')">English</a>
-                        <a href="#" onclick="changeLanguage('es')">Español</a>
-                        <a href="#" onclick="changeLanguage('fr')">Français</a>
-                        <a href="#" onclick="changeLanguage('de')">Deutsch</a>
-                        <!-- Add more languages as needed -->
-                    </div>
-                </div>
+<body>
+<section class="header" id="home">
+    <nav>
+        <a href="#home"><img src="logo.png" alt=""></a>
+        <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i>
+            <ul>
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#courses">COURSES</a></li>
+                <li><a href="#Blog">BLOG</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </div>
+    </nav>
+    <div class="text-box">
+        <h1>World's Biggest University</h1>
+        <p>Making Website is now one of the easiest things in the world. You just need to learn HTML, CSS,<br>Javascript and you are good to go.</p>
+        <a href="#contact" class="hero-btn">Visit Us To Know More</a>
+    </div>
+</section>
+
+<section class="course" id="courses">
+    <h1>Courses We Offer</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    <div class="row">
+        <div class="course-col">
+            <h3>Intermediate</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos numquam suscipit, perspiciatis asperiores omnis quis obcaecati, ipsa delectus earum eum eaque nulla accusantium incidunt tempore ipsum libero illum maxime. Dolor!</p>
+        </div>
+        <div class="course-col">
+            <h3>Degree</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos numquam suscipit, perspiciatis asperiores omnis quis obcaecati, ipsa delectus earum eum eaque nulla accusantium incidunt tempore ipsum libero illum maxime. Dolor!</p>
+        </div>
+        <div class="course-col">
+            <h3>Post Graduation</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos numquam suscipit, perspiciatis asperiores omnis quis obcaecati, ipsa delectus earum eum eaque nulla accusantium incidunt tempore ipsum libero illum maxime. Dolor!</p>
+        </div>
+    </div>
+</section>
+
+<section class="campus">
+    <h1>Our Global Campus</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    <div class="row">
+        <div class="campus-col">
+            <img src="london.png" alt="">
+            <div class="layer">
+                <h3>LONDON</h3>
             </div>
         </div>
-    </header>
-    <main>
-        <section class="hero">
-            <h2 id="welcome-text">Welcome to The Hometown Agency</h2>
-            <p id="tagline">Your trusted partner in real estate.</p>
-        </section>
-        <section class="search-bar">
-            <input type="text" class="search-input" placeholder="Search for properties..." id="search-input">
-            <button class="search-button" onclick="searchProperties()">Search</button>
-        </section>
-        <section class="listings" id="listings">
-            <div class="listing" data-property-id="1">
-                <img src="Apartment1.png" alt="Apartment 1">
-                <h3>Luxury Apartment 1</h3>
-                <p>Location: Downtown</p>
-                <p>Price: 2.3M AED</p>
-                <button>Contact</button>
+        <div class="campus-col">
+            <img src="newyork.png" alt="">
+            <div class="layer">
+                <h3>NEW YORK</h3>
             </div>
-            <div class="listing" data-property-id="2">
-                <img src="Apartment2.png" alt="Apartment 2">
-                <h3>Cozy Apartment 2</h3>
-                <p>Location: Uptown</p>
-                <p>Price: 1.8M AED</p>
-                <button>Contact</button>
+        </div>
+        <div class="campus-col">
+            <img src="washington.png" alt="">
+            <div class="layer">
+                <h3>WASHINGTON</h3>
             </div>
-            <div class="listing" data-property-id="3">
-                <img src="Apartment3.png" alt="Apartment 3">
-                <h3>Modern Apartment 3</h3>
-                <p>Location: Suburbs</p>
-                <p>Price: 1.5M AED</p>
-                <button>Contact</button>
+        </div>
+    </div>
+</section>
+
+<section class="Facilities">
+    <h1>Our Facilities</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    <div class="row">
+        <div class="facilities-col">
+            <img src="library.png" alt="">
+            <h3>World Class Library</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed deleniti ullam quos amet! Magnam sed temporibus est repellat distinctio, culpa debitis dicta. Autem, rerum. Distinctio sit quasi deserunt nulla.</p>
+        </div>
+        <div class="facilities-col">
+            <img src="basketball.png" alt="">
+            <h3>Largest Play Ground</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed deleniti ullam quos amet! Magnam sed temporibus est repellat distinctio, culpa debitis dicta. Autem, rerum. Distinctio sit quasi deserunt nulla.</p>
+        </div>
+        <div class="facilities-col">
+            <img src="cafeteria.png" alt="">
+            <h3>Tasty and Healthy Food</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed deleniti ullam quos amet! Magnam sed temporibus est repellat distinctio, culpa debitis dicta. Autem, rerum. Distinctio sit quasi deserunt nulla.</p>
+        </div>
+    </div>
+</section>
+
+<section class="testimonials" id="blog">
+    <h1>What Our Students Say</h1>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+    <div class="row">
+        <div class="testimonials-col">
+            <img src="user1.jpg" alt="">
+            <div>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad totam molestias eum, excepturi velit fuga non temporibus ut veritatis harum ratione eveniet perferendis saepe nam voluptas enim consectetur, obcaecati iure?</p>
+                <h3>Christine Berkley</h3>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-0"></i>
             </div>
-        </section>
-    </main>
-    <script>
-        function changeLanguage(language) {
-            const elements = {
-                "en": {
-                    "welcome-text": "Welcome to The Hometown Agency",
-                    "tagline": "Your trusted partner in real estate."
-                },
-                "es": {
-                    "welcome-text": "Bienvenido a The Hometown Agency",
-                    "tagline": "Su socio de confianza en bienes raíces."
-                },
-                "fr": {
-                    "welcome-text": "Bienvenue à The Hometown Agency",
-                    "tagline": "Votre partenaire de confiance en immobilier."
-                },
-                "de": {
-                    "welcome-text": "Willkommen bei The Hometown Agency",
-                    "tagline": "Ihr vertrauenswürdiger Partner in Immobilien."
-                }
-            };
+        </div>
+        <div class="testimonials-col">
+            <img src="user2.jpg" alt="">
+            <div>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad totam molestias eum, excepturi velit fuga non temporibus ut veritatis harum ratione eveniet perferendis saepe nam voluptas enim consectetur, obcaecati iure?</p>
+                <h3>David Byer</h3>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-0"></i>
+            </div>
+        </div>
+    </div>
+</section>
 
-            document.getElementById('welcome-text').textContent = elements[language]["welcome-text"];
-            document.getElementById('tagline').textContent = elements[language]["tagline"];
-        }
+<!------ Call TO Action ------>
 
-        function checkLoginStatus() {
-            const loggedIn = false; // Replace with your actual login status check
-            const isAdmin = false; // Replace with your actual admin status check
+<section class="cta" id="contact">
+    <h1>Enroll For Our Various Online Courses<br>Anywhere From The World</h1>
+    <a href="contact.html" class="hero-btn">CONTACT US</a>
+</section>
 
-            if (loggedIn) {
-                document.body.classList.add('logged-in');
-                document.getElementById('logout-link').style.display = 'block'; // Show logout link if logged in
-                document.getElementById('login-link').style.display = 'none'; // Hide login link if logged in
-                document.getElementById('register-link').style.display = 'none'; // Hide register link if logged in
+<section class="live-classes">
+    <h3>Live Classes</h3>
+    <ul>
+        <li><a href="portal.html">PHYSICS</a></li>
+        <li><a href="portal.html">CHEMISTRY</a></li>
+        <li><a href="portal.html">ENGLISH</a></li>
+        <li><a href="portal.html">ENGLISH FOUNDATION</a></li>
+        <li><a href="portal.html">MATHEMATICS</a></li>
+        <li><a href="portal.html">MATH FOUNDATION</a></li>
+        <li><a href="portal.html">HISTORY</a></li>
+        <li><a href="portal.html">URDU</a></li>
+    </ul>
+</section>
 
-                if (isAdmin) {
-                    document.getElementById('admin-link').style.display = 'block'; // Show admin link if admin
-                }
-            }
-        }
 
-        function logout() {
-            document.body.classList.remove('logged-in');
-            document.getElementById('logout-link').style.display = 'none'; // Hide logout link after logout
-            document.getElementById('login-link').style.display = 'block'; // Show login link after logout
-            document.getElementById('register-link').style.display = 'block'; // Show register link after logout
-            document.getElementById('admin-link').style.display = 'none'; // Hide admin link after logout
-            alert('You have logged out successfully');
-        }
+<!------- Footer ------>
 
-        document.addEventListener('DOMContentLoaded', checkLoginStatus);
-    </script>
+<section class="footer" id="about">
+    <h4>About Us</h4>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad totam molestias eum,<br> excepturi velit fuga non temporibus ut veritatis harum ratione eveniet perferendis saepe nam voluptas enim consectetur, obcaecati iure?</p>
+    <div class="icons">
+        <i class="fa fa-facebook"></i>
+        <i class="fa fa-twitter"></i>
+        <i class="fa fa-instagram"></i>
+        <i class="fa fa-linkedin"></i>
+    </div>
+    <p>Made with <i class="fa fa-heart-o"></i> by Easy Tutorials</p>
+</section>
+
+<script>
+    var navlinks = document.getElementById("navLinks");
+    function showMenu(){
+        navlinks.style.right = "0";
+    }
+    function hideMenu(){
+        navlinks.style.right = "-200px";
+    }
+</script>
 </body>
 </html>
